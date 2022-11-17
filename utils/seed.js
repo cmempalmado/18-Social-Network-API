@@ -2,18 +2,19 @@ const connection = require('../config/connection');
 const { User, Thought } = require('../models');
 const { usernames, emails, thoughtsExamples } = require('./data');
 
+
+
 connection.on('error', (err) => err);
 
 connection.once('open', async () => {
-    console.log('connected');
-
+    console.log('connected to SocNetAPI');
+    const usersArray = [];
+    const thoughtsArray = [];
     await User.deleteMany({});
     await Thought.deleteMany({});
 
-    const usersArray = [];
-    const thoughtsArray = [];
-
-    for (var i=0; i<7; i++) {
+// Loop 7 times -- add users to the usersArray
+    for (let i = 0; i < 7; i++) {
         const users = usernames[i];
         const email = emails[i];
         const thoughts = thoughtsExamples[i];

@@ -5,7 +5,7 @@ const usernames = [
     'PokemonMaster',
     'NoobMaster69',
     'HelloWorld',
-    'HelloWorld123',
+    'WorldHello123',
     'LoLChallenger',
     'qweasdzxc',
 ];
@@ -15,7 +15,7 @@ const emails = [
     'charizardstarter@yahoo.com',
     'thorkiller@hotmail.com',
     'helloworld@gmail.com',
-    'worldhello@gmail.com',
+    'worldhello123@gmail.com',
     'leaguemovetutor@legend.com',
     'asdasd@email.com',
 ];

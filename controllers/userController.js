@@ -2,7 +2,7 @@ const { User, Thought } = require('../models');
 
 const userController = {
 // get all users
-  getUsers(req, res) {
+  getAllUsers(req, res) {
     User.find()
       .select('-__v')
       .then((userData) => {
@@ -14,7 +14,7 @@ const userController = {
       });
   },
 // get a user by id
-  getSingleUser(req, res) {
+  getOneUser(req, res) {
     User.findOne({ _id: req.params.userId })
       .select('-__v')
       .populate('friends')
@@ -67,8 +67,6 @@ const userController = {
         if (!userData) {
           return res.status(404).json({ message: 'No user with this id!' });
         }
-
-// get id of user `thoughts` and delete all
         return Thought.deleteMany({ _id: { $in: userData.thoughts } });
       })
       .then(() => {
