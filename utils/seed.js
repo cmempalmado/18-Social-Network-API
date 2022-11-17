@@ -21,16 +21,16 @@ connection.once('open', async () => {
         usersArray.push({users, email, thoughts});
         thoughtsArray.push({users, thoughts});
 
-    }
-
-
-
+    };
 
     await User.collection.insertMany(usersArray);
 
     // await User.collection.insertOne(emails);
 
     await Thought.collection.insertMany(thoughtsArray);
+
+    console.table(usersArray);
+    console.table(thoughtsArray);
 
     console.log('~~~~~~ Seeding Complete! ~~~~~');
     process.exit(0);

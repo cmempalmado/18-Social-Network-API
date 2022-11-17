@@ -1,4 +1,4 @@
-// data examples
+// data seeds examples
 
 const usernames = [
     'SuperAwesomeProfessor',
