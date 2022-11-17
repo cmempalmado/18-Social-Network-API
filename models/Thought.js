@@ -1,7 +1,9 @@
-const { Schema, model } = require('mongoose');
+const mongoose = require('mongoose');
 const reactionSchema = require('./Reaction');
 
-const thoughtSchema = new Schema(
+const handleError = (err) => console.error(err);
+
+const thoughtSchema = new mongoose.Schema(
   {
     thoughtText: {
       type: String,
@@ -11,7 +13,7 @@ const thoughtSchema = new Schema(
     },
     createdAt: {
       type: Date,
-      default: Date.now(),
+      default: Date.now,
       get: (date) => {return date.toISOString().split("T") [0];}
     },
     username: {
@@ -28,10 +30,16 @@ const thoughtSchema = new Schema(
   }
 );
 
+(err) => (err ? handleError(err) : console.log('Created new document'))
+
 thoughtSchema.virtual('reactionCount').get(function() {
   return this.reactions.length;
+
+  
 });
 
-const Thought = model('Thought', thoughtSchema);
+const Thought = mongoose.model('Thought', thoughtSchema);
+
+
 
 module.exports = Thought;
