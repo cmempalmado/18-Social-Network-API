@@ -1,9 +1,9 @@
-const mongoose = require('mongoose');
+const { Schema, model } = require('mongoose');
 const reactionSchema = require('./Reaction');
 
 const handleError = (err) => console.error(err);
 
-const thoughtSchema = new mongoose.Schema(
+const thoughtSchema = new Schema(
   {
     thoughtText: {
       type: String,
@@ -24,7 +24,7 @@ const thoughtSchema = new mongoose.Schema(
   },
   {
     toJSON: {
-      getters: true
+      virtuals: true
     },
     id: false
   }
@@ -32,13 +32,13 @@ const thoughtSchema = new mongoose.Schema(
 
 (err) => (err ? handleError(err) : console.log('Created new document'))
 
-thoughtSchema.virtual('reactionCount').get(function() {
-  return this.reactions.length;
+thoughtSchema
+  .virtual('reactionCount')
+  .get(function() {
+    return this.reactions.length;
+  });
 
-  
-});
-
-const Thought = mongoose.model('Thought', thoughtSchema);
+const Thought = model('thought', thoughtSchema);
 
 
 
