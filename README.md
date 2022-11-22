@@ -33,6 +33,12 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 
 ## Mock Up
 
+GET users
+![Get-all-users](https://user-images.githubusercontent.com/107980867/203303766-c5c29ca2-d285-4ce0-8f7a-e5909e4ed5e2.jpg)
+
+
+GET thoughts
+![Get-all-thoughts](https://user-images.githubusercontent.com/107980867/203303780-66171e7e-4b05-4124-9cc3-0e0d9b12b3fc.jpg)
 
 ## Link to Walkthrough Video
 https://drive.google.com/file/d/16sailJhoMrc4b1CUHUBAmrY5VzBN-bjw/view?usp=sharing
