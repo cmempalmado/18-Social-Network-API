@@ -1,7 +1,7 @@
 const { User, Thought } = require('../models');
 
 const userController = {
-// get all users
+// Get all users
   getAllUsers(req, res) {
     User.find()
       .select('-__v')
@@ -13,7 +13,7 @@ const userController = {
         res.status(500).json(err);
       });
   },
-// get a user by id
+// Get a user by id
   getOneUser(req, res) {
     User.findOne({ _id: req.params.userId })
       .select('-__v')
@@ -30,7 +30,7 @@ const userController = {
         res.status(500).json(err);
       });
   },
-// create a new user
+// Create a new user
   createUser(req, res) {
     User.create(req.body)
       .then((userData) => {res.json(userData)})
@@ -39,7 +39,7 @@ const userController = {
         res.status(500).json(err);
       });
   },
-// update a user
+// Update a user
   updateUser(req, res) {
     User.findOneAndUpdate(
       { _id: req.params.userId },
@@ -60,7 +60,7 @@ const userController = {
         res.status(500).json(err);
       });
   },
-// delete user and delete same user thoughts
+// Delete user and delete same user thoughts
   deleteUser(req, res) {
     User.findOneAndDelete({ _id: req.params.userId })
       .then((userData) => {
@@ -78,7 +78,7 @@ const userController = {
       });
   },
 
-// add a friend to friend list
+// Add a friend to friend list
   addFriend(req, res) {
     User.findOneAndUpdate(
       { _id: req.params.userId }, 
@@ -96,7 +96,7 @@ const userController = {
         res.status(500).json(err);
       });
   },
-// remove a friend from friend list
+// Remove a friend from friend list
   removeFriend(req, res) {
     User.findOneAndUpdate(
       { _id: req.params.userId }, 

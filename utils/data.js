@@ -1,6 +1,6 @@
 // data seeds examples
 
-const usernames = [
+const usernamesExamples = [
     'SuperAwesomeProfessor',
     'PokemonMaster',
     'NoobMaster69',
@@ -10,7 +10,7 @@ const usernames = [
     'qweasdzxc',
 ];
 
-const emails = [
+const emailsExamples = [
     'superawesomeprofessor@gmail.com',
     'charizardstarter@yahoo.com',
     'thorkiller@hotmail.com',
@@ -27,7 +27,7 @@ const thoughtsExamples = [
     'Hello World!',
     'Hello World and FizzBuzz tutorials are awesome!',
     'Teemo is a badass Champion',
-    'asdasd, nothing is on my mind right now',
+    'asdasd, nothing is in my mind right now',
 ];
 
-module.exports = { usernames, emails, thoughtsExamples };
+module.exports = { usernamesExamples, emailsExamples, thoughtsExamples };

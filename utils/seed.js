@@ -1,6 +1,6 @@
 const connection = require('../config/connection');
 const { User, Thought } = require('../models');
-const { usernames, emails, thoughtsExamples } = require('./data');
+const { usernamesExamples, emailsExamples, thoughtsExamples } = require('./data');
 
 
 
@@ -16,15 +16,15 @@ connection.once('open', async () => {
     
 // Loop 7 times -- add users to the usersArray
     for (let i = 0; i < 7; i++) {
-        const users = usernames[i];
-        const email = emails[i];
+        const username = usernamesExamples[i];
+        const email = emailsExamples[i];
         const thoughts = thoughtsExamples[i];
 
-        usersArray.push({users, email, thoughts});
-        thoughtsArray.push({users, thoughts});
+        usersArray.push({username, email, thoughts});
+        thoughtsArray.push({username, thoughts});
 
     };
-
+    // console.log(usersArray, thoughtsArray);
     await User.collection.insertMany(usersArray);
 
     // await User.collection.insertOne(emails);
